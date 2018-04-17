@@ -25,8 +25,8 @@ AlamofireImage is an image component library for Alamofire.
 ## Requirements
 
 - iOS 8.0+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+
-- Xcode 8.0+
-- Swift 3.0+
+- Xcode 8.3+
+- Swift 3.1+
 
 ## Migration Guides
 
@@ -35,7 +35,7 @@ AlamofireImage is an image component library for Alamofire.
 
 ## Dependencies
 
-- [Alamofire 4.0+](https://github.com/Alamofire/Alamofire)
+- [Alamofire 4.5+](https://github.com/Alamofire/Alamofire)
 
 ## Communication
 
@@ -55,7 +55,7 @@ AlamofireImage is an image component library for Alamofire.
 $ gem install cocoapods
 ```
 
-> CocoaPods 1.1.0+ is required.
+> CocoaPods 1.1+ is required.
 
 To integrate AlamofireImage into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
@@ -65,7 +65,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'AlamofireImage', '~> 3.2'
+    pod 'AlamofireImage', '~> 3.3'
 end
 ```
 
@@ -89,7 +89,7 @@ $ brew install carthage
 To integrate AlamofireImage into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Alamofire/AlamofireImage" ~> 3.2
+github "Alamofire/AlamofireImage" ~> 3.3
 ```
 
 Run `carthage update` to build the framework and drag the built `AlamofireImage.framework` into your Xcode project.
@@ -567,17 +567,22 @@ If you believe you have identified a security vulnerability with AlamofireImage,
 
 ## Donations
 
-The [ASF](https://github.com/Alamofire/Foundation#members) is looking to raise money to officially register as a federal non-profit organization. Registering will allow us members to gain some legal protections and also allow us to put donations to use, tax free. Donating to the ASF will enable us to:
+The [ASF](https://github.com/Alamofire/Foundation#members) is looking to raise money to officially stay registered as a federal non-profit organization.
+Registering will allow us members to gain some legal protections and also allow us to put donations to use, tax free.
+Donating to the ASF will enable us to:
 
-* Pay our legal fees to register as a federal non-profit organization
-* Pay our yearly legal fees to keep the non-profit in good status
-* Pay for our mail servers to help us stay on top of all questions and security issues
-* Potentially fund test servers to make it easier for us to test the edge cases
-* Potentially fund developers to work on one of our projects full-time
+- Pay our yearly legal fees to keep the non-profit in good status
+- Pay for our mail servers to help us stay on top of all questions and security issues
+- Potentially fund test servers to make it easier for us to test the edge cases
+- Potentially fund developers to work on one of our projects full-time
 
-The community adoption of the ASF libraries has been amazing. We are greatly humbled by your enthusiasm around the projects, and want to continue to do everything we can to move the needle forward. With your continued support, the ASF will be able to improve its reach and also provide better legal safety for the core members. If you use any of our libraries for work, see if your employers would be interested in donating. Our initial goal is to raise $1000 to get all our legal ducks in a row and kickstart this campaign. Any amount you can donate today to help us reach our goal would be greatly appreciated.
+The community adoption of the ASF libraries has been amazing.
+We are greatly humbled by your enthusiasm around the projects, and want to continue to do everything we can to move the needle forward.
+With your continued support, the ASF will be able to improve its reach and also provide better legal safety for the core members.
+If you use any of our libraries for work, see if your employers would be interested in donating.
+Any amount you can donate today to help us reach our goal would be greatly appreciated.
 
-<a href='https://pledgie.com/campaigns/31474'><img alt='Click here to lend your support to: Alamofire Software Foundation and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/31474.png?skin_name=chrome' border='0' ></a>
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W34WPEE74APJQ)
 
 ## License
 
