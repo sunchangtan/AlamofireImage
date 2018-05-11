@@ -314,10 +314,10 @@ extension UIImageView {
             progress: progress,
             progressQueue: progressQueue,
             completion: { [weak self] response in
-                guard
-                    let strongSelf = self,
-                    strongSelf.isURLRequestURLEqualToActiveRequestURL(response.request) &&
-                    strongSelf.af_activeRequestReceipt?.receiptID == downloadID
+                guard let strongSelf = self,
+                    (strongSelf.isURLRequestURLEqualToActiveRequestURL(response.request) &&
+                        strongSelf.af_activeRequestReceipt?.receiptID == downloadID
+                        || strongSelf.af_activeRequestReceipt == nil && response.result.isSuccess)
                 else {
                     completion?(response)
                     return

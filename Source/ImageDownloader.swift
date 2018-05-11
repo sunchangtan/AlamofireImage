@@ -297,16 +297,15 @@ open class ImageDownloader {
 
                         if let originalImage = self.imageCache?.image(for: request, withIdentifier:nil) {
 
-                            var filteredImage: Image = originalImage
-
                             if let filter = filter {
 
-                                filteredImage = filter.filter(originalImage)
+                                var filteredImage = filter.filter(originalImage)
+
+                                targetImage = filteredImage
+
                                 //把处理的图片添加到缓存中去
                                 self.imageCache?.add(filteredImage, for: request, withIdentifier: filter.identifier)
                             }
-
-                            targetImage = filteredImage
                         }
                     }
 
