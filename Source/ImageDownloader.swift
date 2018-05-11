@@ -284,13 +284,40 @@ open class ImageDownloader {
             if let request = urlRequest.urlRequest {
                 switch request.cachePolicy {
                 case .useProtocolCachePolicy, .returnCacheDataElseLoad, .returnCacheDataDontLoad:
+
+                    var targetImage: UIImage?
+
                     if let image = self.imageCache?.image(for: request, withIdentifier: filter?.identifier) {
+
+                        targetImage = image
+                    }
+
+                    //未取到处理的缓存图片，去缓存中取原始图片，进行加工返回
+                    if targetImage == nil {
+
+                        if let originalImage = self.imageCache?.image(for: request, withIdentifier:nil) {
+
+                            var filteredImage: Image = originalImage
+
+                            if let filter = filter {
+
+                                filteredImage = filter.filter(originalImage)
+                                //把处理的图片添加到缓存中去
+                                self.imageCache?.add(filteredImage, for: request, withIdentifier: filter.identifier)
+                            }
+
+                            targetImage = filteredImage
+                        }
+                    }
+
+                    if let targetImage = targetImage {
+
                         DispatchQueue.main.async {
                             let response = DataResponse<Image>(
                                 request: urlRequest.urlRequest,
                                 response: nil,
                                 data: nil,
-                                result: .success(image)
+                                result: .success(targetImage)
                             )
 
                             completion?(response)
@@ -340,6 +367,10 @@ open class ImageDownloader {
 
                     switch response.result {
                     case .success(let image):
+
+                        //保存原始图片
+                        strongSelf.imageCache?.add(image, for: request, withIdentifier: nil)
+
                         var filteredImages: [String: Image] = [:]
 
                         for (_, filter, completion) in responseHandler.operations {
