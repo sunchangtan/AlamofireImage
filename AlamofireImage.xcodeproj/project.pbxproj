@@ -1358,7 +1358,7 @@
 					};
 					4C9043761AABBFC5001B4E60 = {
 						CreatedOnToolsVersion = 6.2;
-						LastSwiftMigration = "";
+						LastSwiftMigration = 1000;
 					};
 					4C9043811AABBFC5001B4E60 = {
 						CreatedOnToolsVersion = 6.2;
@@ -2252,7 +2252,7 @@
 				PRODUCT_NAME = AlamofireImage;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -2274,7 +2274,7 @@
 				PRODUCT_NAME = AlamofireImage;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
